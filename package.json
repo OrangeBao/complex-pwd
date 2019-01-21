@@ -1,7 +1,7 @@
 {
   "name": "complex-pwd",
   "version": "1.0.0",
-  "description": "iframe postMessage",
+  "description": "complex string check",
   "main": "index.js",
   "scripts": {
     "start": "webpack --config webpack.config.js --watch & pushstate-server . 9000",
@@ -9,7 +9,7 @@
     "release": "webpack --config webpack.config.lap.js"
   },
   "keywords": [
-    "postmessage"
+    "check"
   ],
   "author": {
     "name": "yhbao",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OrangeBao/brto.git"
+    "url": "https://github.com/OrangeBao/complex-pwd.git"
   },
   "license": "MIT",
   "devDependencies": {

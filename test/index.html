@@ -7,7 +7,10 @@
     <body>
       <div>
         <ul>
-          <li>不要出现3位及以上连续或重复的字母、数字、特殊字符，如ABC、Abc、123、AAA、Aaa、111、###等</li>
+          <li>密码以字母开头，长度不小于8位，由大小写字母、数字以及特殊符号!@#$%^&*+-_=组成</li>
+          <li>不要以姓名、电话号码以及出生日期等作为密码的组成部分</li>
+          <li>不要出现3位及以上连续或重复的字母、数字、特殊字符，如AAA、Aaa、111、###等</li>
+          <li>不要出现3位及以上重复的字母、数字、特殊字符，如ABC、Abc、123、！@#等</li>
         </ul>
       </div>
       <div>
@@ -30,7 +33,7 @@
         clearError()
         var v = document.getElementById('pwdStr').value
         console.log(v)
-        setError($complexPwd(v))
+        setError(complexPasswordCheck(v))
       }
     </script>
 </html>

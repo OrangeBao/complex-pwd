@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: 'complex-pwd.js',
     path: path.resolve(__dirname, 'dist'),
-    library: '$complexPwd',
+    library: 'complexPasswordCheck',
     libraryTarget: 'umd'
   },
   devtool: 'source-map',
