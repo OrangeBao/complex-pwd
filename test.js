@@ -3,8 +3,8 @@ var ComplexPasswordCheck = require('./lib')
 
 var complexPasswordCheck = new ComplexPasswordCheck({name: "byh"})
 const errorList = complexPasswordCheck.getErrorList()
-describe('complexPasswordCheck.check', function() {
-  describe('检查', function() {
+describe('检查', function() {
+  describe('简单匹配用例', function() {
     it(errorList.a, function() {
       assert.equal(complexPasswordCheck.check('12tzx2312ss'), errorList.a);
     });
@@ -35,24 +35,33 @@ describe('complexPasswordCheck.check', function() {
       assert.equal(complexPasswordCheck.check('Ax2@byhtCbaBc'), errorList.h);
       assert.equal(complexPasswordCheck.check('A13x2by@htxyz'), errorList.h);
     });
+  });
+
+  describe('能通过的用例', function() {
     const passDemo = [
       'Q!23$af&ss',
       'Q!23$af&ss',
-      'c12c31c23#11'
+      'c12c31c23#11',
+      's!232ade'
     ]
-    it('能通过的用例' + passDemo.join('、') + "。", function() {
-      passDemo.forEach(function(input) {
+    passDemo.forEach(function(input) {
+      it(input, function() {
         assert.equal(!complexPasswordCheck.check(input), true)
-      })
-    });
+      });
+    })
+    
+  });
+
+  describe('不能通过的用例', function() {
     const notPassDemo = [
       'Q123$af&ss',
       'Q!23$af&ssaaaa'
     ]
-    it('不能通过的用例' + notPassDemo.join('、') + "。", function() {
-      notPassDemo.forEach(function(input) {
+    notPassDemo.forEach(function(input) {
+      it(input, function() {
         assert.equal(!!complexPasswordCheck.check(input), true)
-      })
-    });
+      });
+    })
   });
+
 });
