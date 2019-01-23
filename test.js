@@ -37,7 +37,8 @@ describe('complexPasswordCheck.check', function() {
     });
     const passDemo = [
       'Q!23$af&ss',
-      'Q!23$af&ss'
+      'Q!23$af&ss',
+      'c12c31c23#11'
     ]
     it('能通过的用例' + passDemo.join('、') + "。", function() {
       passDemo.forEach(function(input) {
