@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack --config webpack.config.js --watch & pushstate-server . 9000",
     "build": "webpack --config webpack.config.js",
-    "release": "webpack --config webpack.config.lap.js"
+    "release": "webpack --config webpack.config.lap.js",
+    "test": "mocha test.js"
   },
   "keywords": [
     "check"
@@ -24,6 +25,7 @@
     "@babel/core": "^7.0.0-rc.1",
     "@babel/preset-env": "^7.0.0-rc.1",
     "babel-loader": "^8.0.0-beta.4",
+    "mocha": "^5.2.0",
     "pushstate-server": "^3.0.1",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.0.8"

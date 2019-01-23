@@ -23,17 +23,20 @@
       
     </body>
     <script>
-      function clearError() {
-        document.getElementById('error').innerText = ""
-      }
-      function setError(errMsg) {
-        document.getElementById('error').innerText = errMsg
-      }
-      function checkValue() {
-        clearError()
-        var v = document.getElementById('pwdStr').value
-        console.log(v)
-        setError(complexPasswordCheck(v))
+      window.onload = function() {
+        var complexPasswordCheck = new ComplexPasswordCheck()
+        function clearError() {
+          document.getElementById('error').innerText = ""
+        }
+        function setError(errMsg) {
+          document.getElementById('error').innerText = errMsg
+        }
+        function checkValue() {
+          clearError()
+          var v = document.getElementById('pwdStr').value
+          console.log(v)
+          setError(complexPasswordCheck.check(v))
+        }
       }
     </script>
 </html>
