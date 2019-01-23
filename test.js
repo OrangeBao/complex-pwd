@@ -8,9 +8,9 @@ describe('检查', function() {
     it(errorList.a, function() {
       assert.equal(complexPasswordCheck.check('12tzx2312ss'), errorList.a);
     });
-    // it('必须包含字母', function() {
-    //   assert.equal(complexPasswordCheck.check('Ax2tzx2'), "必须包含字母");
-    // });
+    it(errorList.b, function() {
+      assert.equal(complexPasswordCheck.check('ax2t%zx23'), errorList.b);
+    });
     it(errorList.c, function() {
       assert.equal(complexPasswordCheck.check('Ax%%tzx&'), errorList.c);
     });
@@ -22,7 +22,7 @@ describe('检查', function() {
     });
     it(errorList.f, function() {
       assert.equal(complexPasswordCheck.check('Ax2byht%zx2AAA'), errorList.f);
-      assert.equal(complexPasswordCheck.check('Ax2byht!zx2Aaac'), errorList.f);
+      assert.equal(complexPasswordCheck.check('Ax2byht@zx2Aaac'), errorList.f);
       assert.equal(complexPasswordCheck.check('Ax2byht@zx2111c'), errorList.f);
     });
     it(errorList.g, function() {
@@ -39,10 +39,10 @@ describe('检查', function() {
 
   describe('能通过的用例', function() {
     const passDemo = [
-      'Q!23$af&ss',
-      'Q!23$af&ss',
-      'c12c31c23#11',
-      's!232ade'
+      'Q23$af&ss',
+      'Q23$af&ss',
+      'C12c31c23#11',
+      's232Adece%'
     ]
     passDemo.forEach(function(input) {
       it(input, function() {
@@ -55,7 +55,8 @@ describe('检查', function() {
   describe('不能通过的用例', function() {
     const notPassDemo = [
       'Q123$af&ss',
-      'Q!23$af&ssaaaa'
+      'Q!23$af&ssaaaa',
+      'asscswb12!@'
     ]
     notPassDemo.forEach(function(input) {
       it(input, function() {
