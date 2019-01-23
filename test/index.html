@@ -15,7 +15,7 @@
       </div>
       <div>
           <input value="" id="pwdStr"></input>
-          <button onclick="checkValue()">检查</button>
+          <button id="btn">检查</button>
       </div>
       <div>
           <p id="error"></p>
@@ -34,9 +34,9 @@
         function checkValue() {
           clearError()
           var v = document.getElementById('pwdStr').value
-          console.log(v)
           setError(complexPasswordCheck.check(v))
         }
+        document.getElementById('btn').onclick = checkValue
       }
     </script>
 </html>
